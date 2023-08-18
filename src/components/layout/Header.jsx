@@ -1,9 +1,6 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function Header() {
-  const [activePage, setActivePage] = useState(1);
-
   return (
     <header className="pb-4 flex justify-between">
       <a href="">
@@ -11,24 +8,24 @@ export default function Header() {
         React <span className="text-lg font-bold">Router</span>
       </a>
       <nav>
-        <Link
+        <NavLink
           to="/"
           className="border hover:bg-slate-500 border-black rounded-sm px-3 py-1"
         >
           Home
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           to="/about"
           className="border  hover:bg-slate-500 border-black rounded-sm px-3 py-1"
         >
           About
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           to="/books"
           className="border  hover:bg-slate-500 border-black rounded-sm px-3 py-1"
         >
           Books
-        </Link>
+        </NavLink>
       </nav>
     </header>
   );

@@ -4,6 +4,7 @@ import Header from './components/layout/Header';
 import { Route, Routes } from 'react-router-dom';
 import NotFoundPage from './pages/NotFoundPage';
 import BooksPage from './pages/BooksPage';
+import SingleBookPage from './pages/SingleBookPage';
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/books" element={<BooksPage />} />
+        <Route path="/books/:bookId" element={<SingleBookPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </div>
