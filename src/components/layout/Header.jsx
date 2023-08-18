@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   const [activePage, setActivePage] = useState(1);
@@ -10,18 +11,18 @@ export default function Header() {
         React <span className="text-lg font-bold">Router</span>
       </a>
       <nav>
-        <a
-          href="/"
+        <Link
+          to="/"
           className="border hover:bg-slate-500 border-black rounded-sm px-3 py-1"
         >
           Home
-        </a>
-        <a
-          href="/about"
+        </Link>
+        <Link
+          to="/about"
           className="border  hover:bg-slate-500 border-black rounded-sm px-3 py-1"
         >
           About
-        </a>
+        </Link>
       </nav>
     </header>
   );
