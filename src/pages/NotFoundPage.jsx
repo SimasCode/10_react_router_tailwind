@@ -7,7 +7,7 @@ export default function NotFoundPage() {
         OPPPS, 404, page not found
       </h1>
       <p className="pb-4">The page was not found</p>
-      <Link className="underline" to={'/'}>
+      <Link className="underline block" to={'/'}>
         try home page
       </Link>
     </div>
