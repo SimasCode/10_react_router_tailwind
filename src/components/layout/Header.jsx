@@ -23,6 +23,12 @@ export default function Header() {
         >
           About
         </Link>
+        <Link
+          to="/books"
+          className="border  hover:bg-slate-500 border-black rounded-sm px-3 py-1"
+        >
+          Books
+        </Link>
       </nav>
     </header>
   );
