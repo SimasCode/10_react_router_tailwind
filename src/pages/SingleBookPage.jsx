@@ -30,18 +30,22 @@ export default function SingleBookPage() {
 
   return (
     <div className="container">
-      <Link className="bg-gray" to={'/books'}>
+      <Link
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded "
+        to={'/books'}
+      >
         Go back
       </Link>
-      <h1 className="text-3xl font-bold underline">
-        Title: {currentBook.title} id: {params.bookId}
-      </h1>
-      <div className="">
-        <p className="text-lg text-gray-600">
+
+      <div className="border border-slate-500 p-8 shadow-md mt-10  ">
+        <h1 className="text-3xl font-bold underline ">
+          Title: {currentBook.title} id: {params.bookId}
+        </h1>
+        <p className="text-lg text-gray-600 mt-6">
           Written by: {currentBook.author}
         </p>
-        <p className="text-2xl">Year: {currentBook.year}</p>
-        <h3>
+        <p className="text-2xl mt-6 ">Year: {currentBook.year}</p>
+        <h3 className="mt-6 ">
           Genre: <strong>{currentBook.genre} </strong>
         </h3>
       </div>

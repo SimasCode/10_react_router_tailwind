@@ -9,8 +9,8 @@ export default function BooksPage() {
       .then((resp) => resp.json())
       .then((data) => {
         console.log('ALIO ===', data);
-        const filter = data.filter((obj) => obj.genre === 'Science');
-        setItems(filter);
+
+        setItems(data);
       })
       .catch((error) => {
         console.log('Error', error);
@@ -25,7 +25,7 @@ export default function BooksPage() {
 
       <h2 className="text-xl font-medium mb-2">Pick a book:</h2>
 
-      <ul>
+      <ul className="border-2 border-rose-400">
         {items.map((obj) => (
           <BookLink
             key={obj.id}

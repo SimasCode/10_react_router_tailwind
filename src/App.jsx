@@ -6,6 +6,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import BooksPage from './pages/BooksPage';
 import SingleBookPage from './pages/SingleBookPage';
 import Contacts from './pages/Contacts';
+import NewBookPage from './pages/NewBookPage';
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/new" element={<NewBookPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/books" element={<BooksPage />} />
         <Route path="/contacts" element={<Contacts />} />
