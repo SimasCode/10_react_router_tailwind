@@ -9,23 +9,33 @@ export default function Header() {
       </a>
       <nav>
         <NavLink
+          to="/new"
+          className="  bg-blue-500 hover:bg-blue-700 text-white font-bold px-3 py-1 rounded-sm"
+        >
+          Add book
+        </NavLink>
+
+        <NavLink
           to="/"
-          className="border hover:bg-slate-500 border-black rounded-sm px-3 py-1"
+          className="border hover:bg-slate-500 border-black rounded-sm px-3 py-1 "
         >
           Home
         </NavLink>
+
         <NavLink
           to="/about"
-          className="border  hover:bg-slate-500 border-black rounded-sm px-3 py-1"
+          className="border  hover:bg-slate-500 border-black rounded-sm px-3 py-1 "
         >
           About
         </NavLink>
+
         <NavLink
           to="/books"
           className="border  hover:bg-slate-500 border-black rounded-sm px-3 py-1"
         >
           Books
         </NavLink>
+
         <NavLink
           to="/contacts"
           className="border  hover:bg-slate-500 border-black rounded-sm px-3 py-1"
