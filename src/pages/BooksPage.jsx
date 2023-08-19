@@ -1,9 +1,24 @@
-import { Link } from 'react-router-dom';
-import { bookData } from '../assets/db';
+import { useEffect, useState } from 'react';
+import BookLink from '../components/BookLink';
 
 export default function BooksPage() {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch('/db/books.json')
+      .then((resp) => resp.json())
+      .then((data) => {
+        console.log('ALIO ===', data);
+        const filter = data.filter((obj) => obj.genre === 'Science');
+        setItems(filter);
+      })
+      .catch((error) => {
+        console.log('Error', error);
+      });
+  }, []);
+
   return (
-    <div>
+    <div className="container">
       <link rel="stylesheet" href="" />
       <h1 className="text-3xl font-bold underline">Books Page</h1>
       <p>See all the books we have</p>
@@ -11,12 +26,15 @@ export default function BooksPage() {
       <h2 className="text-xl font-medium mb-2">Pick a book:</h2>
 
       <ul>
-        {bookData.map((book) => (
-          <li key={book.id} className="pb-4 text-orange-700">
-            <Link className="underline" to={`/books/${book.id}`}>
-              {book.title} - {book.author} - {book.year}
-            </Link>
-          </li>
+        {items.map((obj) => (
+          <BookLink
+            key={obj.id}
+            id={obj.id}
+            title={obj.title}
+            author={obj.author}
+            year={obj.year}
+            genre={obj.genre}
+          />
         ))}
       </ul>
     </div>

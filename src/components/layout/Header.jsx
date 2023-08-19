@@ -26,6 +26,12 @@ export default function Header() {
         >
           Books
         </NavLink>
+        <NavLink
+          to="/contacts"
+          className="border  hover:bg-slate-500 border-black rounded-sm px-3 py-1"
+        >
+          Contacts
+        </NavLink>
       </nav>
     </header>
   );

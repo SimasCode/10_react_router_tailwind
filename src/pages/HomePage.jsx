@@ -1,6 +1,6 @@
 export default function HomePage() {
   return (
-    <div>
+    <div className="container">
       <h1 className="text-3xl font-bold underline">Welcome to Home page</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore

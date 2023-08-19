@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { bookData } from '../assets/db';
 
 export default function SingleBookPage() {
   const params = useParams();
@@ -8,20 +7,33 @@ export default function SingleBookPage() {
 
   const [currentBook, setCurrentBook] = useState({});
 
+  // useEffect(() => {
+  //   console.log('bookData ===', bookData);
+  //   // surasti knygos objekta kurio id yra lygus prams.bookId
+  //   const found = bookData.find((bObj) => bObj.id.toString() === params.bookId);
+  //   console.log('found ===', found);
+  //   setCurrentBook(found);
+  // }, [params.bookId]);
+
   useEffect(() => {
-    console.log('bookData ===', bookData);
-    // surasti knygos objekta kurio id yra lygus prams.bookId
-    const found = bookData.find((bObj) => bObj.id.toString() === params.bookId);
-    console.log('found ===', found);
-    setCurrentBook(found);
+    fetch('/db/books.json')
+      .then((resp) => resp.json())
+      .then((data) => {
+        const found = data.find((bObj) => bObj.id.toString() === params.bookId);
+        console.log('data ===', found);
+        setCurrentBook(found);
+      })
+      .catch((error) => {
+        console.warn('ivyko klaida:', error);
+      });
   }, [params.bookId]);
+
   return (
     <div className="container">
       <Link className="bg-gray" to={'/books'}>
         Go back
       </Link>
       <h1 className="text-3xl font-bold underline">
-        {' '}
         Title: {currentBook.title} id: {params.bookId}
       </h1>
       <div className="">
