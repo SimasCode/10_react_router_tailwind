@@ -54,5 +54,13 @@
       "year": 1859,
       "genre": "Science",
       "category": "Reality"
+    },
+    {
+      "id": 8,
+      "title": "The Book",
+      "author": "rašytojas",
+      "year": 1999,
+      "genre": "Science Fantasy",
+      "category": "Fiction"
     }
   ]
