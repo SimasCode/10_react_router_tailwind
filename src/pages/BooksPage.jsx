@@ -45,7 +45,7 @@ export default function BooksPage() {
 
       <h2 className="text-xl font-medium mb-2">Pick a book:</h2>
 
-      <ul className="border-2 border-rose-400">
+      <ul className="">
         {items
           .filter((book) => book.genre.toLowerCase().includes(inputValue))
           .map((obj) => (

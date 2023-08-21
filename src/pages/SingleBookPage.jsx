@@ -7,14 +7,6 @@ export default function SingleBookPage() {
 
   const [currentBook, setCurrentBook] = useState({});
 
-  // useEffect(() => {
-  //   console.log('bookData ===', bookData);
-  //   // surasti knygos objekta kurio id yra lygus prams.bookId
-  //   const found = bookData.find((bObj) => bObj.id.toString() === params.bookId);
-  //   console.log('found ===', found);
-  //   setCurrentBook(found);
-  // }, [params.bookId]);
-
   useEffect(() => {
     fetch('/db/books.json')
       .then((resp) => resp.json())
