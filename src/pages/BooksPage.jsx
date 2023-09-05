@@ -27,7 +27,9 @@ export default function BooksPage() {
   return (
     <div className="container">
       <link rel="stylesheet" href="" />
-      <h1 className="text-3xl font-bold underline">Books Page</h1>
+      <h1 className="sm:text-xl lg:text-3xl xl:text-5xl xl:font-normal font-bold underline pb-4">
+        Books Page
+      </h1>
 
       <form>
         <label htmlFor="search">Enter book genre:</label>
@@ -43,9 +45,9 @@ export default function BooksPage() {
         </button>
       </form>
 
-      <h2 className="text-xl font-medium mb-2">Pick a book:</h2>
-
-      <ul className="">
+      <h2 className="text-2xl font font-medium mb-2">Pick a book:</h2>
+      {/* <ul className="grid lg:grid-cols-3 xl:grid-cols-4 gap-2 text-center"> */}
+      <ul className="grid grid-cols-12 gap-2">
         {items
           .filter((book) => book.genre.toLowerCase().includes(inputValue))
           .map((obj) => (

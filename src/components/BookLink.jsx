@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function BookLink(props) {
   return (
-    <li className="text-body-color mb-4 flex text-base">
+    <li className="border border-slate-400 p-3 lg:col-span-4 xl:col-span-3">
       <Link
         className=" bg-indigo-200 underline text-lg hover:text-blue-600"
         to={`/books/${props.id}`}
